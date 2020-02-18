@@ -1,3 +1,4 @@
+const fs = require('fs');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
@@ -5,51 +6,27 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const data = fs.readFileSync('./database.json');
+const conf = JSON.parse(data);
+const mysql = require('mysql');
+
+const connection = mysql.createConnection({
+    host: conf.host,
+    user: conf.user,
+    password: conf.password,
+    port: conf.port,
+    database: conf.database
+})
+
+connection.connect();
+
 app.get('/api/members', (req, res) => {
-    res.send([
-    {
-        'number': 888,
-        'team': '구축',
-        'name': '은지혜1',
-        'rank': '차장',
-    },
-    {
-        'number': 2,
-        'team': '운영',
-        'name': '은지혜2',
-        'rank': '과장',
-    },
-    {
-        'number': 3,
-        'team': '구축',
-        'name': '은지혜3',
-        'rank': '사원',
-    },
-    {
-        'number': 4,
-        'team': '구축',
-        'name': '은지혜3',
-        'rank': '사원',
-    },
-    {
-        'number': 5,
-        'team': '구축',
-        'name': '은지혜3',
-        'rank': '사원',
-    },
-    {
-        'number': 6,
-        'team': '구축',
-        'name': '은지혜3',
-        'rank': '사원',
-    },
-    {
-        'number': 7,
-        'team': '구축',
-        'name': '은지혜3',
-        'rank': '사원',
-    }
-    ]);
+    connection.query(
+        'SELECT * FROM netivemms.member_base_info',
+        (err, rows, fields) => {
+            res.send(rows);
+        }
+    )
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

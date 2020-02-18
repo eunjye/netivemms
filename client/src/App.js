@@ -36,20 +36,24 @@ class App extends Component {
         </header>
         <table className="tbl_basic" width="100%">
           <colgroup>
-            <col width="25%"></col>
-            <col width="25%"></col>
-            <col width="25%"></col>
-            <col width="25%"></col>
+            <col width="12%"></col>
+            <col width="10%"></col>
+            <col width="10%"></col>
+            <col width="*%"></col>
+            <col width="12%"></col>
+            <col width="35%"></col>
           </colgroup>
           <thead>
             <th scope="col">사원번호</th>
-            <th scope="col">팀</th>
             <th scope="col">이름</th>
-            <th scope="col">직급</th>
+            <th scope="col">성별</th>
+            <th scope="col">생년월일</th>
+            <th scope="col">연락처</th>
+            <th scope="col">주소</th>
           </thead>
           <tbody>
             {this.state.members ? this.state.members.map(m => {
-              return <Member key={m.number} number={m.number} name={m.name} team={m.team} rank={m.rank} />
+              return <Member key={m.number} number={m.number} name={m.name} gender={m.gender} birth={m.birth} phone={m.phone} address={m.address} />
             }) : 
             <tr>
               <td colSpan="4">준비중</td>
