@@ -1,0 +1,8 @@
+@charset "UTF-8";
+/* _mixins.scss */
+@mixin blind() {
+    overflow:hidden;
+    color: transparent;
+    font-size: xx-small;
+    text-indent: -9999px;
+}
