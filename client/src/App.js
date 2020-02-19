@@ -38,9 +38,9 @@ class App extends Component {
           <colgroup>
             <col width="12%"></col>
             <col width="10%"></col>
-            <col width="10%"></col>
+            <col width="5%"></col>
             <col width="*%"></col>
-            <col width="12%"></col>
+            <col width="20%"></col>
             <col width="35%"></col>
           </colgroup>
           <thead>
