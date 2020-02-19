@@ -52,12 +52,15 @@ class App extends Component {
             <th scope="col">주소</th>
           </thead>
           <tbody>
-            {this.state.members ? this.state.members.map(m => {
-              return <Member key={m.number} number={m.number} name={m.name} gender={m.gender} birth={m.birth} phone={m.phone} address={m.address} />
-            }) : 
-            <tr>
-              <td colSpan="4">준비중</td>
-            </tr>
+            {
+              this.state.members ? 
+              this.state.members.map(m => {
+                return <Member key={m.pin} pin={m.pin} name={m.name} gender={m.gender} birth={m.birth} phone={m.phone} address={m.address} />
+              }) 
+              : 
+              <tr>
+                <td colSpan="6">준비중</td>
+              </tr>
             }
           </tbody>
         </table>
