@@ -1,5 +1,6 @@
 /* _forms.scss */
 
+
 // input
 .textbox { 
   height:3rem; 
@@ -14,4 +15,25 @@ button,
 %btn { 
   display:inline-block; 
   vertical-align:middle;
+
+  &.size-l {
+    padding:12px 18px 13px;
+    font-size:1.6rem;
+  }
+}
+.btn-basic { 
+  padding: 7px 8px 8px;
+  background-color:#fff;
+  border:1px solid #bbb;
+}
+.btn-point {
+  padding: 7px 8px 8px;
+  background-color:$G-color-main;
+  border: 0;
+  color:#fff;
+}
+.btn-sub { 
+  padding: 7px 8px 8px;
+  background-color:#fff;
+  border:1px solid #bbb;
 }

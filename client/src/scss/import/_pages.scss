@@ -1,6 +1,18 @@
 /* _pages.scss */
 .login-wrap { 
+  width: 1200px;
+  margin:0 auto;
+  .box-basic {
+    width:500px;
+    margin:120px auto 0;
+    text-align: center;
+  }
   .textbox { 
-    margin:10px;
+    display: inline-block;
+    width: 100%;
+    margin: 10px 0;
+  }
+  .btn-point {
+    margin: 18px 0 0;
   }
 }
