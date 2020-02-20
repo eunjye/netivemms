@@ -1,2 +1,48 @@
 @charset "UTF-8";
-/* _base.scss */
+/* _base.scss : reset */
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 300;
+  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),
+    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),
+    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: normal;
+  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),
+    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),
+    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: bold;
+  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),
+    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),
+    url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');
+}
+
+html, body, h1, h2, h3, h4, h5, h6, div, img, p, span, i, em, a, strong, blockquote, dl, dt, dd, ul, li, ol, button, a { 
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-weight: inherit;
+  border:0;
+}
+html, body { 
+  font-family: 'Noto Sans KR', Dotum, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 10px;
+}
+
+body { 
+  font-size: 1.4rem;
+  letter-spacing: -0.08rem;
+}
+
+button, a {
+  letter-spacing: inherit;
+}

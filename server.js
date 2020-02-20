@@ -22,7 +22,16 @@ connection.connect();
 
 app.get('/api/members', (req, res) => {
     connection.query(
-        'SELECT * FROM netivemms.member_base_info',
+        'SELECT * FROM member_base_info',
+        (err, rows, fields) => {
+            res.send(rows);
+        }
+    )
+});
+
+app.get('/api/projects', (req, res) => {
+    connection.query(
+        'SELECT * FROM project_info',
         (err, rows, fields) => {
             res.send(rows);
         }

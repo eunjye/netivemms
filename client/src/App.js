@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
-import Member from './components/Member';
+import { Route } from 'react-router-dom';
+import { Login, MemberList } from './pages';
+import Header from './components/Header';
+import Projects from './components/Projects';
 import './scss/App.scss';
+
 class App extends Component {
-  state = {
-    members: '',
-    completed: 0
+  constructor(props) {
+    super(props);
+    this.state = {
+      members: '',
+      completed: 0,
+      hey: false
+    }
+    this.sayHey = this.sayHey.bind(this);
   }
+  // state = {
+  //   members: '',
+  //   completed: 0
+  // }
     
   componentDidMount() {
     this.timer = setInterval(this.progress, 20);
@@ -28,12 +41,19 @@ class App extends Component {
     this.setState({ completed: completed >= 100 ? 0 : completed + 1});
   };
   
+  sayHey() {
+    this.setState(state => ({
+      hey: !state.hey
+    }))
+    if (!this.state.hey) alert('ss');
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1>HI</h1>
-        </header>
+        <Header>
+          <Route exact path="/" component={Login}/>
+          <Route exact path="/member-list" component={MemberList}/>
+        </Header>
         <table className="tbl_basic" width="100%">
           <colgroup>
             <col width="12%"></col>
@@ -44,12 +64,14 @@ class App extends Component {
             <col width="35%"></col>
           </colgroup>
           <thead>
-            <th scope="col">사원번호</th>
-            <th scope="col">이름</th>
-            <th scope="col">성별</th>
-            <th scope="col">생년월일</th>
-            <th scope="col">연락처</th>
-            <th scope="col">주소</th>
+            <tr>
+              <th scope="col">사원번호<button onClick={this.sayHey}>버튼</button></th>
+              <th scope="col">이름</th>
+              <th scope="col">성별</th>
+              <th scope="col">생년월일</th>
+              <th scope="col">연락처</th>
+              <th scope="col">주소</th>
+            </tr>
           </thead>
           <tbody>
             {
@@ -64,6 +86,7 @@ class App extends Component {
             }
           </tbody>
         </table>
+        <Projects />
       </div>
     );
   }

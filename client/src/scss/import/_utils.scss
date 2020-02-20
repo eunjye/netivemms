@@ -1,0 +1,17 @@
+/* _forms.scss */
+
+// input
+.textbox { 
+  height:3rem; 
+  line-height:3rem; 
+  border:1px solid #bbb; 
+  padding:0 10px;
+}
+
+// button
+button, 
+[class*="btn-"], 
+%btn { 
+  display:inline-block; 
+  vertical-align:middle;
+}
