@@ -1,9 +1,11 @@
 /* _pages.scss */
 .login-wrap { 
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   margin:0 auto;
   .box-basic {
-    width:500px;
+    width: 100%;
+    max-width:500px;
     margin:120px auto 0;
     text-align: center;
   }

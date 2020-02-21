@@ -20,11 +20,29 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
-app.get('/api/members', (req, res) => {
+app.get('/api/members/base', (req, res) => {
     connection.query(
         'SELECT * FROM member_base_info',
         (err, rows, fields) => {
-            res.send(rows);
+            if (!err) {
+                res.send(rows);
+            } else {
+                console.log(`query error : ${err}`);
+                res.send(err);
+            }
+        }
+    )
+});
+app.get('/api/members/work', (req, res) => {
+    connection.query(
+        'SELECT * FROM member_work_info',
+        (err, rows, fields) => {
+            if (!err) {
+                res.send(rows);
+            } else {
+                console.log(`query error : ${err}`);
+                res.send(err);
+            }
         }
     )
 });
@@ -33,7 +51,12 @@ app.get('/api/projects', (req, res) => {
     connection.query(
         'SELECT * FROM project_info',
         (err, rows, fields) => {
-            res.send(rows);
+            if (!err) {
+                res.send(rows);
+            } else {
+                console.log(`query error : ${err}`);
+                res.send(err);
+            }
         }
     )
 });
