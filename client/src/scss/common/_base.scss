@@ -25,7 +25,7 @@
     url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');
 }
 
-html, body, h1, h2, h3, h4, h5, h6, div, img, p, span, i, em, a, strong, blockquote, dl, dt, dd, ul, li, ol, button, a, input { 
+html, body, h1, h2, h3, h4, h5, h6, div, img, p, span, i, em, a, strong, blockquote, dl, dt, dd, ul, li, ol, button, a, input, th, td { 
   margin:0;
   padding:0;
   box-sizing: border-box;
@@ -49,4 +49,12 @@ button, a {
   font-weight: inherit;
   color: inherit;
   cursor: pointer;
+  text-decoration: none;
+}
+
+input, select, option {
+  letter-spacing: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: $G-font-color-basic;
 }

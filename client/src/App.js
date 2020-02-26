@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
-import { Login, MemberList } from './pages';
-import Header from './components/Header';
-import Projects from './components/Projects';
+import { Login, MemberList, Projects, Status } from './pages';
+import { Layout } from './components';
 import history from './history';
 
 import './scss/App.scss';
@@ -24,7 +23,11 @@ class App extends Component {
         <Router history={history}>
           <Switch>
             <Route exact path="/" component={Login} />
-            <Route exact path="/member-list" component={MemberList}/>
+            <Layout>
+              <Route exact path="/member-list" component={MemberList}/>
+              <Route exact path="/status" component={Status}/>
+              <Route exact path="/project" component={Projects}/>
+            </Layout>
           </Switch>
         </Router>
       </div>

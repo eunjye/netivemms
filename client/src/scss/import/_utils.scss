@@ -9,12 +9,21 @@
   padding:0 10px;
 }
 
+// select
+.select {
+  height:3rem;
+  line-height:3rem;
+  border:1px solid #bbb;
+  padding:0 10px;
+}
+
 // button
 button, 
 [class*="btn-"], 
 %btn { 
   display:inline-block; 
   vertical-align:middle;
+  transition:border ease-out .2s, background ease-out .2s;
 
   &.size-l {
     padding:12px 18px 13px;
@@ -25,15 +34,107 @@ button,
   padding: 7px 8px 8px;
   background-color:#fff;
   border:1px solid #bbb;
+
+  &:hover {
+    background:#fefefe;
+  }
 }
 .btn-point {
   padding: 7px 8px 8px;
   background-color:$G-color-main;
-  border: 0;
+  border: 1px solid $G-color-main;
   color:#fff;
+
+  &:hover {
+    background:$G-color-point;
+    border-color:$G-color-point;
+  }
 }
 .btn-sub { 
   padding: 7px 8px 8px;
-  background-color:#fff;
-  border:1px solid #bbb;
+  background-color:$G-color-main2;
+  border:1px solid $G-color-main;
+  color:$G-color-main;
+
+  &:hover {
+    background:#ffefdc;
+  }
+}
+
+.btns-wrap {
+  margin: 30px 0 0;
+  text-align:center;
+
+  button, [class*="btn-"] { 
+    margin:0 10px;
+  }
+}
+
+// tab
+.tab-basic { 
+  border-bottom:1px solid $G-border-color-basic; 
+  margin-bottom:30px;
+  overflow:hidden;
+
+  .tab-btn { 
+    float:left; 
+    display:block; 
+    margin:0 -1px -1px 0; 
+    padding:0 18px; 
+    height:36px; 
+    line-height:36px; 
+    border:1px solid $G-border-color-basic;
+
+    &.active { 
+      background-color:$G-color-sub;
+      color:#fff;
+    }
+  }
+}
+
+// table
+.tbl-basic {
+  border-collapse: collapse;
+
+  &.full { width:100%;}
+  &.hover {
+    tr:hover, tr.hover {
+      td {
+        background-color:$G-color-main2;
+      }
+    }
+  }
+
+  thead {
+    tr:first-child {
+      th { 
+        border-top:1px solid #111;
+      }
+    }
+    th {
+      padding: 9px 10px 10px;
+      border:1px solid #e1e1e1;
+      border-left:0;
+      text-align:center;
+      background:#f2f2f2;
+
+      &:last-child { 
+        border-right:0;
+      }
+    }
+  }
+  tbody {
+    td {
+      padding: 9px 10px 10px;
+      border:1px solid #e1e1e1;
+      border-left:0;
+      color:$G-color-sub;
+      text-align:center;
+      transition:background ease-out .2s;
+      
+      &:last-child { 
+        border-right:0;
+      }
+    }
+  }
 }

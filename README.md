@@ -7,7 +7,7 @@
 # Setting
 1. **node.js** 설치
 2. `npm install -g create-react-app`
-3. `npm insdtall -g nodemon`
+3. `npm install -g nodemon`
 4. `yarn`
 5. `node server.js` : 서버 확인 (port:5000)
 6. `yarn dev` : 서버 구동 (port:3000)

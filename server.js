@@ -22,7 +22,7 @@ connection.connect();
 
 app.get('/api/members/base', (req, res) => {
     connection.query(
-        'SELECT * FROM member_base_info',
+        'SELECT * FROM netivemms.member_base_info',
         (err, rows, fields) => {
             if (!err) {
                 res.send(rows);
@@ -35,7 +35,7 @@ app.get('/api/members/base', (req, res) => {
 });
 app.get('/api/members/work', (req, res) => {
     connection.query(
-        'SELECT * FROM member_work_info',
+        'SELECT * FROM netivemms.member_work_info',
         (err, rows, fields) => {
             if (!err) {
                 res.send(rows);
@@ -49,7 +49,7 @@ app.get('/api/members/work', (req, res) => {
 
 app.get('/api/projects', (req, res) => {
     connection.query(
-        'SELECT * FROM project_info',
+        'SELECT * FROM netivemms.project_info',
         (err, rows, fields) => {
             if (!err) {
                 res.send(rows);
