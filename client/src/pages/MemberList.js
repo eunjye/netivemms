@@ -13,11 +13,23 @@ class MemberList extends Component {
     this.state = {
       members: '',
       modallsOpen: false,
-      arrMember: []
+      arrMember: [],
+      // completed: 0
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    // this.stateRefresh = this.stateRefresh.bind(this);
   }
+
+  // stateRefresh() {
+  //   this.setState({
+  //     members: '',
+  //     completed: 0
+  //   });
+  //   this.callApi()
+  //     .then(res => this.setState({members: res}))
+  //     .catch(err => console.log(err));
+  // }
 
   openModal() {
     this.setState({modallsOpen: true});
@@ -125,23 +137,14 @@ class MemberList extends Component {
               })
               :
               <tr>
-                <td colSpan="8">등록된 맴버가 없습니다.</td>
+                <td colSpan="8">등록된 멤버가 없습니다.</td>
               </tr>
             }
           </tbody>
         </table>
         <div className="btns-wrap">
           <button type="button" className="btn-sub size-l">삭제</button>
-          <button type="button" className="btn-point size-l" onClick={this.openModal}>멤버 등록</button>
-          <Modal
-            // className='size-s'
-            isOpen={this.state.modallsOpen}
-            onAfterOpen={this.afterOpenModal}
-            onRequestClose={this.closeModal}
-            contentLabel="멤버 등록하기"
-          >
-            <AddMember />
-          </Modal>
+          <Link to="/member-detail" className="btn-point size-l">멤버 등록</Link>
         </div>
       </Fragment>
     );
