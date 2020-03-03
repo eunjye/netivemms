@@ -89,7 +89,7 @@ class MemberList extends Component {
       <Fragment>
         <Header current="member" />
         <h1 className="tit-dep1">멤버 리스트</h1>
-        <table className="tbl-basic full hover">
+        <table className="tbl-basic hover">
           <caption></caption>
           <colgroup>
             <col width="5%"></col>
@@ -144,7 +144,7 @@ class MemberList extends Component {
         </table>
         <div className="btns-wrap">
           <button type="button" className="btn-sub size-l">삭제</button>
-          <Link to="/member-detail" className="btn-point size-l">멤버 등록</Link>
+          <Link to="/member-add" className="btn-point size-l">멤버 등록</Link>
         </div>
       </Fragment>
     );

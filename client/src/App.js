@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
-import { Login, MemberList, Projects, Status } from './pages';
+import { Login, MemberList, Projects, Status, AddMember } from './pages';
 import { Layout } from './components';
 import history from './history';
 
@@ -27,6 +27,7 @@ class App extends Component {
               <Route exact path="/member-list" component={MemberList}/>
               <Route exact path="/status" component={Status}/>
               <Route exact path="/project" component={Projects}/>
+              <Route exact path="/member-add" component={AddMember}/>
             </Layout>
           </Switch>
         </Router>
